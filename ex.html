@@ -4,6 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      function nightHandler(self) {
+        var target = document.querySelector("body");
+        var alist = document.querySelectorAll("a");
+        i = 0;
+        function setColor(color) {
+          while (i < alist.length) {
+            alist[i].style.color = color;
+            i += 1;
+          }
+        }
+        if (self.value == "night") {
+          target.style.background = "black";
+          target.style.color = "white";
+          self.value = "day";
+          setColor("powderblue");
+        } else {
+          target.style.background = "white";
+          target.style.color = "black";
+          self.value = "night";
+          setColor("blue");
+        }
+      }
+    </script>
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
@@ -11,30 +35,16 @@
       type="button"
       value="night"
       onclick="
-      var target = document.querySelector('body')
-      var alist = document.querySelectorAll('a')
-      i = 0
-  if(this.value=='night'){
-    target.style.background='black';
-    target.style.color='white';    
-    this.value='day';
-    while(i < alist.length){
-    alist[i].style.color = 'skyblue'
-    i += 1;
-}
-  }
-  else{
-    target.style.background='white';
-    target.style.color='black';
-    this.value='night';
-    while(i < alist.length){
-    alist[i].style.color = 'blue'
-    i += 1;
-  }
-}
+      nightHandler(this);
   "
     />
-
+    <input
+      type="button"
+      value="night"
+      onclick="
+      nightHandler(this);
+  "
+    />
     <ol>
       <li><a href="1.html">HTML</a></li>
       <li><a href="2.html">CSS</a></li>
@@ -58,32 +68,14 @@
       type="button"
       value="night"
       onclick="
-  if(this.value=='night'){
-    document.querySelector('body').style.background='black';
-    document.querySelector('body').style.color='white';
-    this.value='day';
-  }
-  else{
-    document.querySelector('body').style.background='white';
-    document.querySelector('body').style.color='black';
-    this.value='night';
-  }
+      nightHandler(this);
   "
     />
     <input
       type="button"
       value="night"
       onclick="
-  if(this.value=='night'){
-    document.querySelector('body').style.background='black';
-    document.querySelector('body').style.color='white';
-    this.value='day';
-  }
-  else{
-    document.querySelector('body').style.background='white';
-    document.querySelector('body').style.color='black';
-    this.value='night';
-  }
+      nightHandler(this);
   "
     />
   </body>
